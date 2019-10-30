@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using ManyConsole;
 
@@ -27,13 +26,11 @@ namespace TerraformIoUtility.Commands
       try
       {
         var service = Program.TerraformIoService;
-        var vars = default(List<Variable>);
-
-        vars = service.ListVariables(WorkspaceName).Result;
+        var vars = service.ListVariables(WorkspaceName).Result;
 
         foreach (var var in vars)
         {
-          Console.Out.WriteLine($"{var.Name}: {var.Value}; {var.IsHcl}, {var.IsSensitive}, {var.Created}");
+          Console.Out.WriteLine($"{var.Key}: {var.Value}; {var.Hcl}, {var.Sensitive}, {var.Created}");
         }
         return Success;
       }

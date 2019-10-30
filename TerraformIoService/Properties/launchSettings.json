@@ -1,8 +1,7 @@
 {
   "profiles": {
     "TerraformWorkerService": {
-      "commandName": "Project",
-      "commandLineArgs": "help"
+      "commandName": "Project"
     }
   }
 }
