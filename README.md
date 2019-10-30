@@ -1,6 +1,16 @@
 # Terraform.io Workspace Management Utility
 Help Terraform.io workspace management utility.
 
+## Prerequisites
+.NET Core 3.1
+
+## Install
+### Linux 64
+
+	wget https://raw.githubusercontent.com/ivanfarkas2/ceres-terraformio-utility/master/install.sh
+	chmod 755 install.sh
+	./install.sh  
+
 ## Usage
 TerraformIoUtility help
 
