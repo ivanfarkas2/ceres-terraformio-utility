@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-TerraformWorkerService-71173818-941A-4DC6-98C3-56853E594172</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ManyConsole" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0-preview1.19506.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.0-preview1.19506.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3-beta2" />
+  </ItemGroup>
+</Project>
