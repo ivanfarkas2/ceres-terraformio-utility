@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier>-->
     <UserSecretsId>dotnet-TerraformWorkerService-71173818-941A-4DC6-98C3-56853E594172</UserSecretsId>
   </PropertyGroup>
 
