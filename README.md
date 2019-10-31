@@ -2,7 +2,14 @@
 Help Terraform.io workspace management utility.
 
 ## Prerequisites
+### Framework
 .NET Core 3.1
+
+### Environment Variables
+	TFIO_ORG = "[your organization]";
+	TFIO_TEAM_ID = "[your team Id]";
+	TFIO_T_TOKEN = "[your team Token]";
+	TFIO_O_TOKEN = "[your organization Token]";
 
 ## Install
 ### Linux 64
