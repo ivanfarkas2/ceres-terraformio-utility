@@ -1,4 +1,3 @@
-REM DOTNET_ENVIRONMENT Development
 @echo off
 
 for /R %%f in (bin,obj,dist,packages,node_modules,bower_components) do (

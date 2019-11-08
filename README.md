@@ -1,9 +1,5 @@
-# Terraform.io Workspace Management Utility
-Help Terraform.io workspace management utility.
-
-## Prerequisites
-### Framework
-.NET Core 3.1
+# Terraform.io Control Utility
+Help Terraform.io control utility.
 
 ### Environment Variables
 	TFIO_ORG = "[your organization]";
