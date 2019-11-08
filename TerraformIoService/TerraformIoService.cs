@@ -108,15 +108,37 @@ namespace TerraformIoUtility
       return await PostStreamAsync($"vars", variable, CancellationToken.None);
     }
 
-    public async Task<List<Attributes>> CopyVariables(string sourceWorkspaceName, string targetWorkspaceName)
+    public async Task<List<Attributes>> CopyVariables(string sourceWorkspaceName, string targetWorkspaceName, string excludeVariables = null, string includeVariables = null)
     {
-      var attributesList = await ListVariables(sourceWorkspaceName);
+      var sourceAttributesList = await ListVariables(sourceWorkspaceName);
+      var targetAttributesList = await ListVariables(targetWorkspaceName);
+      var excludeVariablesList = excludeVariables?.Replace(" ", "")?.Split(",")?.ToList();
+      var includeVariablesList = includeVariables?.Replace(" ", "")?.Split(",")?.ToList();
 
-      foreach (var attributes in attributesList)
+      foreach (var attributes in sourceAttributesList)
       {
-        await CreateVariable(targetWorkspaceName, attributes);
+        var exists = targetAttributesList.FirstOrDefault(x => x.Key == attributes.Key) != null;
+        var exclude = excludeVariablesList != null && excludeVariablesList.Count > 0 && excludeVariablesList.Contains(attributes.Key);
+        var include = includeVariablesList != null && includeVariablesList.Count > 0 && includeVariablesList.Contains(attributes.Key);
+
+        if (exists)
+        {
+          continue;
+        }
+        if (exclude)
+        {
+          continue;
+        }
+        if (include)
+        {
+          await CreateVariable(targetWorkspaceName, attributes);
+        }
+        if (!exclude && !include)
+        {
+          await CreateVariable(targetWorkspaceName, attributes);
+        }
       }
-      return attributesList;
+      return sourceAttributesList;
     }
 
     private async Task<string> GetAsync(string urlSuffix)

@@ -55,7 +55,11 @@ TerraformIoUtility help
                              Source Workspace Name.
       --twn, --targetworkspacename=VALUE
                              Target Workspace Name.
-
+	Optional:	  
+      -x, --excludevariables=VALUE
+	                         Exclude Variables.
+	  -i, --includevariables=VALUE
+                             Include Variables.
 ### Create Variable
 	'crv' - Create Variable
 	Create Variable.
